@@ -1,0 +1,8 @@
+{
+  "name": "smash-tournament-v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:evert1989/smash-tournament-v2.git",
+  "author": "Evert van der Horst <evertvdhorst@gmail.com>",
+  "license": "MIT"
+}
