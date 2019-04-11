@@ -4,6 +4,8 @@
 // ---------------------------------------------------------------------------------------------------------------------
 import * as http from 'http';
 // $FlowFixMe
+import { HOST, PORT } from '../../constants/settings';
+// $FlowFixMe
 import bodyParser from 'body-parser';
 // $FlowFixMe
 import compression from 'compression';
@@ -11,8 +13,6 @@ import compression from 'compression';
 import cors from 'cors';
 // $FlowFixMe
 import express from 'express';
-// $FlowFixMe
-import { PORT } from '../../constants/settings';
 import { ROOT_PATH } from './constants/paths';
 import WebSocketServer from './sockets/WebSocketServer';
 
@@ -20,9 +20,6 @@ import WebSocketServer from './sockets/WebSocketServer';
 // ---------------------------------------------------------------------------------------------------------------------
 const expressServer = express();
 const httpServer = http.createServer(expressServer);
-
-console.log(PORT);
-
 
 // Enable cors
 expressServer.use(
@@ -50,7 +47,7 @@ expressServer.use('/player', express.static(`${ROOT_PATH}/build/player`, { redir
 expressServer.use('/static', express.static(`${ROOT_PATH}/static`, { redirect: true }));
 
 // Express listeners
-httpServer.listen(PORT, () => console.log('SERVER: ready on port', PORT));
+httpServer.listen(PORT, HOST, () => console.log('SERVER: ready on port', PORT));
 
 // Websockets
 // ---------------------------------------------------------------------------------------------------------------------
