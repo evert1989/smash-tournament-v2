@@ -4,8 +4,8 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "nodemon ./build/server",
-    "start": "npm run build && nodemon ./build/server",
+    "serve": "node ./build/server",
+    "start": "npm run build && npm run serve",
     "build": "parcel build ./src/index.js --public-url ./ --out-dir ./build/server --no-cache --no-source-maps --target=node",
     "lint": "eslint ./src",
     "test": "jest"
