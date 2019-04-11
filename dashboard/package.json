@@ -1,0 +1,60 @@
+{
+  "name": "smash-tournament-v2-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel serve ./index.html --open --no-cache",
+    "build": "parcel build ./index.html --public-url ./ --out-dir ../server/build/dashboard --no-cache --no-source-maps",
+    "lint": "eslint ./src",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.6.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.95.1",
+    "jest": "^24.6.0",
+    "jest-enzyme": "^7.0.2",
+    "parcel-bundler": "^1.12.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/**/*.js",
+      "!./src/app/types/**/*.js"
+    ],
+    "coverageDirectory": "./.reports/coverage",
+    "testURL": "http://localhost",
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "setupFilesAfterEnv": ["./src/setupTests.js"],
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ]
+  },
+  "babel": {
+    "plugins": ["@babel/plugin-proposal-class-properties"],
+    "presets": ["@babel/preset-flow", "@babel/preset-env", "@babel/preset-react"]
+  }
+}
