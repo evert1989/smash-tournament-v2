@@ -3,7 +3,7 @@
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
 // $FlowFixMe
-import { HOST, PORTS } from '../../../../constants/settings';
+import { HOST, PORT } from '../../../../constants/settings';
 
 // WebSocketClient
 // ---------------------------------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ class WebSocketClient {
 	}
 
 	connect(): void {
-		this.socket = new WebSocket(`ws://${HOST}:${PORTS.WS_PORT}`);
+		this.socket = new WebSocket(`ws://${HOST}:${PORT}`);
 		this.socket.onmessage = this.handleMessage;
 		this.socket.onclose = this.handleClose;
 	}

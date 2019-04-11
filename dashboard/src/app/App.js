@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 import * as React from 'react';
 // $FlowFixMe
-import { HOST, PORTS } from '../../../constants/settings';
+import { HOST, PORT } from '../../../constants/settings';
 // $FlowFixMe
 import styled, { createGlobalStyle } from 'styled-components';
 // $FlowFixMe
@@ -27,7 +27,7 @@ import Winner from './components/Winner';
 const GlobalStyle = createGlobalStyle`
 	@font-face {
 		font-family: "Super Smash";
-		src: url("http://${HOST}:${PORTS.EXPRESS_PORT}/static/font/super-smash.ttf");
+		src: url("http://${HOST}:${PORT}/static/font/super-smash.ttf");
 	}
 `;
 

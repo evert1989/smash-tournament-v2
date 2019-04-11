@@ -23,10 +23,9 @@ class WebSocketServer {
 
 	previousState: string;
 
-	constructor(): void {
+	constructor(props: any): void {
 		this.server = new WebSocket.Server({
-			noServer: true,
-			port: PORTS.WS_PORT,
+			server: props.server,
 		});
 
 		// Setup socket listeners

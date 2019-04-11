@@ -2,6 +2,7 @@
 
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
+import * as http from 'http';
 // $FlowFixMe
 import bodyParser from 'body-parser';
 // $FlowFixMe
@@ -11,14 +12,17 @@ import cors from 'cors';
 // $FlowFixMe
 import express from 'express';
 // $FlowFixMe
-import { PORTS } from '../../constants/settings';
+import { PORT } from '../../constants/settings';
 import { ROOT_PATH } from './constants/paths';
 import WebSocketServer from './sockets/WebSocketServer';
 
 // Server
 // ---------------------------------------------------------------------------------------------------------------------
 const expressServer = express();
-const PORT = process.env.PORT || PORTS.EXPRESS_PORT;
+const httpServer = http.createServer(expressServer);
+
+console.log(PORT);
+
 
 // Enable cors
 expressServer.use(
@@ -46,10 +50,10 @@ expressServer.use('/player', express.static(`${ROOT_PATH}/build/player`, { redir
 expressServer.use('/static', express.static(`${ROOT_PATH}/static`, { redirect: true }));
 
 // Express listeners
-expressServer.listen(PORT, () => console.log('SERVER: ready on port', PORT));
+httpServer.listen(PORT, () => console.log('SERVER: ready on port', PORT));
 
 // Websockets
 // ---------------------------------------------------------------------------------------------------------------------
-new WebSocketServer(); // eslint-disable-line no-new
+new WebSocketServer({ server: httpServer }); // eslint-disable-line no-new
 
 // todo: state-utils tests
