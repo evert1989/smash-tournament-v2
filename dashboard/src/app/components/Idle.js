@@ -5,7 +5,6 @@
 import * as React from 'react';
 // $FlowFixMe
 import styled, { keyframes } from 'styled-components';
-import { ASSET_PATH } from '../constants/paths';
 import Button from './Button';
 // $FlowFixMe
 import { DASHBOARD } from '../../../../constants/events';
@@ -20,7 +19,7 @@ const zoomIn = keyframes`
 
 const SIdle = styled.div`
 	align-items: center;
-	background: url(${ASSET_PATH}/idle.jpg) center center no-repeat;
+	background: url(${window.location.origin}/static/idle.jpg) center center no-repeat;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
@@ -46,7 +45,7 @@ class Idle extends React.PureComponent<TComponentProps> {
 	render(): React.Node {
 		return (
 			<SIdle>
-				<Logo src={`${ASSET_PATH}/logo.png`} />
+				<Logo src={`${window.location.origin}/static/logo.png`} />
 				<Button copy="Start game" onClick={this.handleClickStart} />
 			</SIdle>
 		);

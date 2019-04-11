@@ -3,7 +3,6 @@
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
 import * as React from 'react';
-import { AVATAR_PATH } from '../constants/paths';
 // $FlowFixMe
 import avatars from '../../../../constants/images';
 // $FlowFixMe
@@ -208,7 +207,7 @@ class Join extends React.PureComponent<TProps, TState> {
 					</label>
 					<SAvatar>
 						<AvatarImage onClick={this.handleClickAvatar} variant="main">
-							<img src={`${AVATAR_PATH}${avatars[imageIndex]}`} />
+							<img src={`${window.location.origin}/static/characters/processed/${avatars[imageIndex]}`} />
 						</AvatarImage>
 						<AvatarContainer isVisible={isShowingList}>
 							{avatars.map((image, i) => (
@@ -217,7 +216,7 @@ class Join extends React.PureComponent<TProps, TState> {
 									onClick={(): void => this.handleClickSelect(i)}
 									variant="list"
 								>
-									<img src={`${AVATAR_PATH}${image}`} />
+									<img src={`${window.location.origin}/static/characters/processed/${image}`} />
 								</AvatarImage>
 							))}
 						</AvatarContainer>

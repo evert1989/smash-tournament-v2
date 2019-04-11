@@ -20,7 +20,7 @@ import WebSocketClient from './sockets/WebSocketClient';
 const GlobalStyle = createGlobalStyle`
 	@font-face {
 		font-family: "Super Smash";
-		src: url("http://${HOST}:${PORT}/static/font/super-smash.ttf");
+		src: url("${window.location.origin}/static/font/super-smash.ttf");
 	}
 `;
 

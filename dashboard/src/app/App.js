@@ -27,7 +27,7 @@ import Winner from './components/Winner';
 const GlobalStyle = createGlobalStyle`
 	@font-face {
 		font-family: "Super Smash";
-		src: url("http://${HOST}:${PORT}/static/font/super-smash.ttf");
+		src: url("${window.location.origin}/static/font/super-smash.ttf");
 	}
 `;
 
@@ -67,8 +67,6 @@ class App extends React.PureComponent<null, TState> {
 
 	componentDidMount(): void {
 		(this: TApp).wsClient = new WebSocketClient({ onSocketMessage: this.handleSocketMessage });
-
-		console.log('PORT', global.PORT, process.env.PORT);
 	}
 
 	handleSocketMessage = (event: string, data?: any): void => {

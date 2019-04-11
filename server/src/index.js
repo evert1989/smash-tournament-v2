@@ -20,7 +20,6 @@ const expressServer = express();
 const httpServer = http.createServer(expressServer);
 
 const PORT = process.env.PORT || 3000;
-global.PORT = PORT;
 
 // Enable cors
 expressServer.use(

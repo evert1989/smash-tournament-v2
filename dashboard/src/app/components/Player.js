@@ -3,7 +3,6 @@
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
 import * as React from 'react';
-import { AVATAR_PATH } from '../constants/paths';
 // $FlowFixMe
 import avatars from '../../../../constants/images';
 // $FlowFixMe
@@ -63,7 +62,7 @@ const Player = ({
 }: TProps): React.Node => (
 	<SPlayer eliminated={eliminated} onClick={() => onClick(player.id)} small={small}>
 		<SImage small={small}>
-			<img src={`${AVATAR_PATH}${avatars[player.imageIndex]}`} />
+			<img src={`${window.location.origin}/static/characters/processed/${avatars[player.imageIndex]}`} />
 		</SImage>
 		<STitle>{player.name}</STitle>
 	</SPlayer>
