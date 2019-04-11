@@ -6,14 +6,46 @@
   "author": "Evert van der Horst",
   "license": "MIT",
   "scripts": {
-    "start": "cd server && yarn serve",
+    "start": "cd server && npm run serve",
     "prebuild": "rm -rf ./server/build",
-    "build": "concurrently \"cd dashboard && yarn build\" \"cd player && yarn build\" \"cd server && yarn build\" "
+    "build": "concurrently \"cd dashboard && npm run build\" \"cd player && npm run build\" \"cd server && npm run build\" "
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-syntax-async-generators": "^6.13.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.96.0",
+    "jest": "^24.7.0",
+    "nodemon": "^1.18.10",
+    "parcel-bundler": "^1.12.3",
+    "ws": "^6.2.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.6.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest-enzyme": "^7.0.2"
   },
   "dependencies": {
-    "ws": "^6.2.1"
+    "ws": "^6.2.1",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "redux": "^4.0.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "styled-components": "^4.2.0"
   }
 }

@@ -1,1 +1,0 @@
-{"version":3,"sources":["styling/index.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"styling.9ce1183a.css","sourceRoot":"..","sourcesContent":["body,\nhtml {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: Arial, Helvetica, sans-serif;\n\tfont-size: 16px;\n}"]}
