@@ -17,7 +17,7 @@ class WebSocketClient {
 	}
 
 	connect(): void {
-		this.socket = new WebSocket(window.location.origin.replace('http://', 'ws://'));
+		this.socket = new WebSocket(window.location.origin.replace('http://', 'ws://').replace('https://', 'ws://'));
 		this.socket.onmessage = this.handleMessage;
 		this.socket.onclose = this.handleClose;
 	}
