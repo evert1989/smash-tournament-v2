@@ -18,6 +18,7 @@ import WebSocketServer from './sockets/WebSocketServer';
 // Server
 // ---------------------------------------------------------------------------------------------------------------------
 const expressServer = express();
+const PORT = process.env.PORT || PORTS.EXPRESS_PORT;
 
 // Enable cors
 expressServer.use(
@@ -45,7 +46,7 @@ expressServer.use('/player', express.static(`${ROOT_PATH}/build/player`, { redir
 expressServer.use('/static', express.static(`${ROOT_PATH}/static`, { redirect: true }));
 
 // Express listeners
-expressServer.listen(PORTS.EXPRESS_PORT, () => console.log('SERVER: ready on port', PORTS.EXPRESS_PORT));
+expressServer.listen(PORT, () => console.log('SERVER: ready on port', PORT));
 
 // Websockets
 // ---------------------------------------------------------------------------------------------------------------------
