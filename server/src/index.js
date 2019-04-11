@@ -4,8 +4,6 @@
 // ---------------------------------------------------------------------------------------------------------------------
 import * as http from 'http';
 // $FlowFixMe
-import { HOST, PORT } from '../../constants/settings';
-// $FlowFixMe
 import bodyParser from 'body-parser';
 // $FlowFixMe
 import compression from 'compression';
@@ -20,6 +18,9 @@ import WebSocketServer from './sockets/WebSocketServer';
 // ---------------------------------------------------------------------------------------------------------------------
 const expressServer = express();
 const httpServer = http.createServer(expressServer);
+
+const PORT = process.env.PORT || 3000;
+global.PORT = PORT;
 
 // Enable cors
 expressServer.use(
