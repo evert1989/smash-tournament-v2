@@ -46,8 +46,10 @@ expressServer.use('/', express.static(`${ROOT_PATH}/build/dashboard`, { redirect
 expressServer.use('/player', express.static(`${ROOT_PATH}/build/player`, { redirect: true }));
 expressServer.use('/static', express.static(`${ROOT_PATH}/static`, { redirect: true }));
 
+expressServer.set('port', PORT);
+
 // Express listeners
-httpServer.listen(PORT, HOST, () => console.log('SERVER: ready on port', PORT));
+httpServer.listen(PORT, () => console.log('SERVER: ready on port', PORT));
 
 // Websockets
 // ---------------------------------------------------------------------------------------------------------------------
