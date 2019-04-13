@@ -38,6 +38,11 @@ const SPlayerWrapper = styled.div`
 	max-width: 992px;
 `;
 
+const SURL = styled.span`
+	font-size: 20px;
+	font-weight: bold;
+`;
+
 // Lobby
 // ---------------------------------------------------------------------------------------------------------------------
 class Lobby extends React.PureComponent<TComponentProps> {
@@ -65,7 +70,11 @@ class Lobby extends React.PureComponent<TComponentProps> {
 			<SLobby>
 				<Title copy="Game lobby" />
 				<p>
-					{'Go to this URL and enter the following code:'}
+					{'Go to'}
+					<SURL>
+						{'http://tiny.cc/424'}
+					</SURL>
+					{'and enter the following code:'}
 				</p>
 				<SCode>
 					{dashboard.gameID}
