@@ -39,7 +39,7 @@ const SPlayerWrapper = styled.div`
 `;
 
 const SURL = styled.span`
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
 `;
 
@@ -70,11 +70,11 @@ class Lobby extends React.PureComponent<TComponentProps> {
 			<SLobby>
 				<Title copy="Game lobby" />
 				<p>
-					{'Go to'}
+					<div>{'Go to'}</div>
 					<SURL>
 						{'http://tiny.cc/424'}
 					</SURL>
-					{'and enter the following code:'}
+					<div>{'and enter the following code:'}</div>
 				</p>
 				<SCode>
 					{dashboard.gameID}
