@@ -41,6 +41,7 @@ const SPlayerWrapper = styled.div`
 const SURL = styled.span`
 	font-size: 40px;
 	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
 `;
 
 // Lobby
